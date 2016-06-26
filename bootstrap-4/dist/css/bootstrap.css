@@ -5637,11 +5637,21 @@ body, html {
   margin-left: 550px;
 }
 
+.background-index-2 {
+  background: ghostwhite;
+}
+
 .body-drawing {
   position: absolute;
   z-index: 999999;
   margin-top: 25px;
   margin-left: 550px;
+}
+
+.body-drawing-index-2 {
+  position: absolute;
+  z-index: 999999;
+  margin-left: 650px;
 }
 
 /*
@@ -5753,5 +5763,293 @@ body, html {
           animation-duration: 1s;
 
   poisiton: absolute;
+}
+
+img {
+  position: absolute;
+}
+
+.ball {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+  height: 10%;
+  background: -webkit-radial-gradient(bottom, circle, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+  background:      -o-radial-gradient(bottom, circle, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+  background:         radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+  border-radius: 100%;
+}
+
+.ball:before {
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  z-index: 2;
+  width: 90%;
+  height: 90%;
+  content: "";
+  background: -webkit-radial-gradient(top, circle, white, rgba(255, 255, 255, 0) 58%);
+  background:      -o-radial-gradient(top, circle, white, rgba(255, 255, 255, 0) 58%);
+  background:         radial-gradient(circle at top, white, rgba(255, 255, 255, 0) 58%);
+          filter: blur(5px);
+  border-radius: 100%;
+
+  -webkit-filter: blur(5px);
+}
+
+.ball:after {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  z-index: 2;
+  display: none;
+  width: 80%;
+  height: 80%;
+  content: "";
+          filter: blur(1px);
+  border-radius: 100%;
+  -webkit-transform: rotateZ(-30deg);
+      -ms-transform: rotate(-30deg);
+       -o-transform: rotateZ(-30deg);
+          transform: rotateZ(-30deg);
+
+  -webkit-filter: blur(1px);
+}
+
+.ball .shadow {
+  z-index: 1;
+  /* position: absolute;*/
+  width: 10%;
+  height: 10%;
+  background: red;
+  -webkit-transform: rotateX(90deg) translateZ(-160px);
+          transform: rotateX(90deg) translateZ(-160px);
+}
+
+.ball.plain {
+  background: black;
+}
+
+.ball.plain:before, .ball.plain:after {
+  display: none;
+}
+
+.ball.bubble {
+  background: red;
+  -webkit-animation: bubble-anim 2s ease-out infinite;
+       -o-animation: bubble-anim 2s ease-out infinite;
+          animation: bubble-anim 2s ease-out infinite;
+}
+
+.ball.bubble:before {
+  width: 40%;
+  height: 80%;
+  background: -webkit-radial-gradient(130% 130% circle, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+  background:      -o-radial-gradient(130% 130% circle, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+  background:         radial-gradient(circle at 130% 130%, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+          filter: blur(0);
+  -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+          transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+
+  -webkit-filter: blur(0);
+}
+
+.ball.bubble:after {
+  display: block;
+  background: -webkit-radial-gradient(50% 80%, circle, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%);
+  background:      -o-radial-gradient(50% 80%, circle, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%);
+  background:         radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%);
+}
+
+.stage {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin-top: 150px;
+  margin-left: 415px;
+
+  -webkit-perspective: 1200px;
+      -ms-perspective: 1200px;
+       -o-perspective: 1200px;
+          perspective: 1200px;
+  -webkit-perspective-origin: 50% 50%;
+      -ms-perspective-origin: 50% 50%;
+       -o-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+}
+
+body {
+  width: 300px;
+  margin: 20px auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(100, 100, 100, .2)), color-stop(40%, rgba(255, 255, 255, .5)), to(#fff));
+  background: -webkit-linear-gradient(top, rgba(100, 100, 100, .2) 0%, rgba(255, 255, 255, .5) 40%, #fff 100%);
+  background:      -o-linear-gradient(top, rgba(100, 100, 100, .2) 0%, rgba(255, 255, 255, .5) 40%, #fff 100%);
+  background:         linear-gradient(to bottom, rgba(100, 100, 100, .2) 0%, rgba(255, 255, 255, .5) 40%, #fff 100%);
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes bubble-anim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scaleY(.95) scaleX(1.05);
+            transform: scaleY(.95) scaleX(1.05);
+  }
+  48% {
+    -webkit-transform: scaleY(1.1) scaleX(.9);
+            transform: scaleY(1.1) scaleX(.9);
+  }
+  68% {
+    -webkit-transform: scaleY(.98) scaleX(1.02);
+            transform: scaleY(.98) scaleX(1.02);
+  }
+  80% {
+    -webkit-transform: scaleY(1.02) scaleX(.98);
+            transform: scaleY(1.02) scaleX(.98);
+  }
+  97%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-o-keyframes bubble-anim {
+  0% {
+    -webkit-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+  }
+  .animated {
+    -webkit-animation-duration: 1s;
+         -o-animation-duration: 1s;
+            animation-duration: 1s;
+
+    -webkit-animation-fill-mode: both;
+         -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  20% {
+    -webkit-transform: scaleY(.95) scaleX(1.05);
+         -o-transform: scaleY(.95) scaleX(1.05);
+            transform: scaleY(.95) scaleX(1.05);
+  }
+  48% {
+    -webkit-transform: scaleY(1.1) scaleX(.9);
+         -o-transform: scaleY(1.1) scaleX(.9);
+            transform: scaleY(1.1) scaleX(.9);
+  }
+  68% {
+    -webkit-transform: scaleY(.98) scaleX(1.02);
+         -o-transform: scaleY(.98) scaleX(1.02);
+            transform: scaleY(.98) scaleX(1.02);
+  }
+  80% {
+    -webkit-transform: scaleY(1.02) scaleX(.98);
+         -o-transform: scaleY(1.02) scaleX(.98);
+            transform: scaleY(1.02) scaleX(.98);
+  }
+  97%, 100% {
+    -webkit-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bubble-anim {
+  0% {
+    -webkit-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+  }
+  .animated {
+    -webkit-animation-duration: 1s;
+         -o-animation-duration: 1s;
+            animation-duration: 1s;
+
+    -webkit-animation-fill-mode: both;
+         -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+  20% {
+    -webkit-transform: scaleY(.95) scaleX(1.05);
+         -o-transform: scaleY(.95) scaleX(1.05);
+            transform: scaleY(.95) scaleX(1.05);
+  }
+  48% {
+    -webkit-transform: scaleY(1.1) scaleX(.9);
+         -o-transform: scaleY(1.1) scaleX(.9);
+            transform: scaleY(1.1) scaleX(.9);
+  }
+  68% {
+    -webkit-transform: scaleY(.98) scaleX(1.02);
+         -o-transform: scaleY(.98) scaleX(1.02);
+            transform: scaleY(.98) scaleX(1.02);
+  }
+  80% {
+    -webkit-transform: scaleY(1.02) scaleX(.98);
+         -o-transform: scaleY(1.02) scaleX(.98);
+            transform: scaleY(1.02) scaleX(.98);
+  }
+  97%, 100% {
+    -webkit-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+  }
+}
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0);
+       transform: translateY(0);
+  }
+  40% {
+    -o-transform: translateY(-30px);
+       transform: translateY(-30px);
+  }
+  60% {
+    -o-transform: translateY(-15px);
+       transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+         -o-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+         -o-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
+/*
+ * Adding the animation to our element
+*/
+.bounce {
+  -webkit-animation-name: bounce;
+       -o-animation-name: bounce;
+          animation-name: bounce;
 }
 /*# sourceMappingURL=bootstrap.css.map */
